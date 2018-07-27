@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int n,x,y,i,j,p,value,a,b;
+	scanf("%d",&n);
+	int arr[1000][1000];
+	scanf("%d%d%d",&x,&y,&p);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			a=abs(x-i);
+			b=abs(y-j);
+			if(a>b)
+			{
+				value=a;
+			}
+			else
+			{
+				value=b;
+			}
+			if((p-value)<0)
+			{
+				arr[i][j]=0;
+			}
+			else
+			{
+				arr[i][j]=p-value;
+			}
+		}
+	}
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			printf("%d",&arr[i][j]);
+		}
+			printf("\n");
+		}
+}
